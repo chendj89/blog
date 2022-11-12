@@ -17,16 +17,7 @@ export interface Link {
    */
   children?: Link[];
 }
-interface Props {
-  /**
-   * 组件类名
-   */
-  className?: string;
-  /**
-   * 数据
-   */
-  link?: Link;
-}
+
 export default defineComponent({
   name: "IconGroup",
   props: {
@@ -45,9 +36,9 @@ export default defineComponent({
       required: true,
     },
   },
-  setup(props: Props) {
-    return () =>
-      h(
+  setup(props, { slots }) {
+    return () => {
+      return h(
         "div",
         {
           class: props.className,
@@ -76,5 +67,6 @@ export default defineComponent({
           )
         )
       );
+    };
   },
 });

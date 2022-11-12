@@ -17,7 +17,9 @@ const link: Link = {
 
 <template>
   <header>
-    <iconGroup :link="link"></iconGroup>
+    <iconGroup :link="link">
+      <span>999</span>
+    </iconGroup>
   </header>
   <RouterView />
 </template>
