@@ -23,20 +23,3 @@ const link: Link = {
   </header>
   <RouterView />
 </template>
-
-<style lang="scss">
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body {
-  padding: 30px;
-  background-color: #f1f1f1;
-}
-.iconGroup {
-  &-icon {
-    @include btn();
-  }
-}
-</style>

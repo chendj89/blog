@@ -54,13 +54,13 @@ export default defineComponent({
             [
               props.link?.children?.map((item) => {
                 return h(
-                  "div",
+                  "img",
                   {
                     class: `${props.className}-icon`,
                     tabindex: "0",
                     src: item.icon,
                   },
-                  "按钮"
+                  item.url
                 );
               }),
             ]
