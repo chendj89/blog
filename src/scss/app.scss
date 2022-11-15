@@ -1,3 +1,7 @@
+:root {
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,4 +15,70 @@ body {
   &-icon {
     @include btn();
   }
+}
+
+body {
+  max-width: 720px;
+  margin: 4rem auto 16rem auto;
+  font-family: "Avenir Next", "Open Sans", Helvetica, sans-serif;
+  font-size: 18px;
+}
+pre {
+  overflow: auto;
+  overflow-wrap: break-word;
+  padding: 16px 0;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  white-space: pre-wrap;
+  border-radius: 8px;
+}
+pre code {
+  display: block;
+  white-space: pre-wrap;
+  font-family: var(--font-mono);
+  padding: 0 24px;
+  font-size: 14px;
+}
+h1,
+h2 {
+  font-size: 1.5rem;
+}
+p img {
+  max-width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+p code {
+  font-family: var(--font-mono);
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: #6f92ba;
+  transition: color 0.4s;
+}
+a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #6f92ba;
+  transform: scaleX(0);
+  transition: all 0.2s cubic-bezier(0.82, 0, 0.12, 1) 0s;
+}
+a:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+#svg {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+#svg svg {
+  max-width: 100%;
 }
