@@ -5,6 +5,10 @@ export interface Link {
    */
   name: string;
   /**
+   * 描述
+   */
+  desc:string;
+  /**
    * 图标
    */
   icon: string;
@@ -15,8 +19,9 @@ export interface Link {
   /**
    * 子列表
    */
-  children?: Link[];
+  children?:Omit<Link,"desc">[];
 }
+
 
 export default defineComponent({
   name: "IconGroup",
