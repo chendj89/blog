@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from "vue-router";
 import iconGroup, { type Link } from "./components/tsx/iconGroup";
-import Md from "./md/index.md";
+import Md from "./md/vue2.md";
 const link: Link = {
   name: "github",
   desc: "",
@@ -19,10 +19,10 @@ const link: Link = {
 
 <template>
   <header>
+    <Md></Md>
     <iconGroup :link="link">
       <span>999</span>
     </iconGroup>
-    <Md></Md>
   </header>
   <RouterView />
 </template>
