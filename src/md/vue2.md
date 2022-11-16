@@ -16,3 +16,9 @@ watch:{
 }
 
 ```
+
+## hook
+
+```js
+this.$on('hook:beforeDestory',()=>{})
+```
