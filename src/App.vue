@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import {provide} from "vue";
+import {provide,ref} from "vue";
 import { RouterView } from "vue-router";
 import scss from "@/scss/alias.module.scss";
 import iconGroup, { type Link } from "./components/tsx/iconGroup";
 import Md from "./md/npm.md";
-provide('scss',scss);
+let scssRef=ref(scss)
+provide('scss',scssRef);
 const link: Link = {
   name: "github",
   desc: "",
@@ -18,14 +19,22 @@ const link: Link = {
     },
   ],
 };
+let index=0;
+const changeTheme=()=>{
+  let theme=["#ff5c00","red","blue","green"];
+  index++;
+  index= index%theme.length
+  scssRef.value.theme=theme[index];
+};
 </script>
 
 <template>
   <header>
-    <Md></Md>
+    <div @click="changeTheme">修改主题颜色</div>
     <iconGroup :link="link">
       <span>999</span>
     </iconGroup>
+    <Md></Md>
   </header>
   <RouterView />
 </template>

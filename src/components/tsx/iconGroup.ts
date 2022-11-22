@@ -1,4 +1,4 @@
-import { h, defineComponent, type PropType } from "vue";
+import { h, defineComponent, type PropType,inject, type Ref  } from "vue";
 export interface Link {
   /**
    * 链接名称
@@ -42,6 +42,8 @@ export default defineComponent({
     },
   },
   setup(props, { slots }) {
+    const scss:Ref=inject("scss");
+    console.log(scss);
     return () => {
       return h(
         "div",
@@ -68,6 +70,9 @@ export default defineComponent({
                   item.url
                 );
               }),
+              h("div",{
+                style:`background:${scss.value.theme};color:#fff;width:30px;height:30px;text-align:center;line-height:30px;`
+              },'1')
             ]
           )
         )
