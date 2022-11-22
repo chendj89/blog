@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from "vue-router";
 import iconGroup, { type Link } from "./components/tsx/iconGroup";
-import Md from "./md/vue2.md";
+import Md from "./md/npm.md";
 const link: Link = {
   name: "github",
   desc: "",
