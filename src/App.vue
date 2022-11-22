@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import {provide} from "vue";
 import { RouterView } from "vue-router";
+import scss from "@/scss/alias.module.scss";
 import iconGroup, { type Link } from "./components/tsx/iconGroup";
 import Md from "./md/npm.md";
+provide('scss',scss);
 const link: Link = {
   name: "github",
   desc: "",
