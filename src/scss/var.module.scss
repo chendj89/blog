@@ -1,5 +1,12 @@
-$theme: #ff5c01;
+$theme: #3578e5;
 $size: 16px;
+// 字体
+$fontFamily: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+  Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$gray: #f5f6f8;
 :export {
   theme: $theme;
+  fontFamily: $fontFamily;
 }
+

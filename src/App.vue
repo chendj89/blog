@@ -29,12 +29,5 @@ const changeTheme=()=>{
 </script>
 
 <template>
-  <header>
-    <div @click="changeTheme">修改主题颜色</div>
-    <iconGroup :link="link">
-      <span>999</span>
-    </iconGroup>
-    <Md></Md>
-  </header>
   <RouterView />
 </template>
