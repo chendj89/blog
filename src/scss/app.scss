@@ -1,29 +1,3 @@
 body {
   background-color: #fff;
 }
-$blue: #adb5bd;
-.btn {
-  display: block;
-  padding: 16px;
-  width: 250px;
-  background-color: $blue;
-  color: #000;
-  @for $i from 1 through 9 {
-    &-#{$i} {
-      display: block;
-      padding: 16px;
-      width: 250px;
-
-      @if ($i<5) {
-        color: #000;
-        background-color: tint-color($blue, (5-$i) * 20%);
-      } @else if($i==5) {
-        background-color: $blue;
-        color: #000;
-      } @else {
-        background-color: shade-color($blue, ($i - 5) * 20%);
-        color: #fff;
-      }
-    }
-  }
-}

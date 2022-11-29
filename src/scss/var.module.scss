@@ -5,8 +5,28 @@ $fontFamily: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
   Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
   sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $gray: #f5f6f8;
+
+@function createTheme($color) {
+  $json: "";
+  @for $i from 1 through 9 {
+    @if ($i<5) {
+      $theme: tint-color($color, (5-$i) * 20%);
+      @warn ($theme);
+      $json: "#{$json}theme#{$i}:#{(tint-color($color, (5-$i) * 20%))};";
+    } @else if($i==5) {
+      $json: "#{$json}theme#{$i}:#{$color};";
+    } @else {
+      $theme: shade-color($color, ($i - 5) * 20%);
+      $json: "#{$json}theme#{$i}:#{shade-color($color, ($i - 5) * 20%)};";
+    }
+  }
+
+  $json: "{#{$json}}";
+  @return $json;
+}
+
 :export {
   theme: $theme;
   fontFamily: $fontFamily;
+  color: createTheme(#ff5c00);
 }
-
