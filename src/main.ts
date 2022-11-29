@@ -32,3 +32,22 @@ const colourBlend = (c1: string, c2: string, ratio: number) => {
   b = ("0" + (b || 0).toString(16)).slice(-2);
   return "#" + r + g + b;
 };
+
+/**
+ * 创建九阶主题
+ * @param theme 颜色
+ */
+const createTheme = (theme: string) => {
+  let $theme: string = theme || "#6f42c1";
+  let list = [];
+  for (let i = 0; i < 9; i++) {
+    if (i < 4) {
+      list.push(colourBlend($theme, "#ffffff", (4 - i) * 0.2));
+    } else if (i == 4) {
+      list.push($theme);
+    } else {
+      list.push(colourBlend($theme, "#000000", (i - 4) * 0.2));
+    }
+  }
+  return list;
+};
