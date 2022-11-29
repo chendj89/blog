@@ -49,17 +49,28 @@ let list = createTheme("#6f42c1");
     class="box"
     v-for="(item, index) in list"
     :key="index"
-    :style="`background:${item}`"
+    :style="`background:${item};--hover:${list[4]}`"
+    :tabindex="0"
   >
-    {{ index + 1 }}---{{ item }}
+    {{ index + 1 }}
   </div>
 </template>
 <style lang="scss">
 .box {
-  display: block;
-  width: 120px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
   height: 40px;
   color: #fff;
   font-size: 12px;
+  transition: all 0.15s ease-in-out;
+  margin: 10px;
+  cursor: pointer;
+  &:focus {
+    background-color: var(--hover);
+    border-color: var(--hover);
+    box-shadow: 0 0 0 0.25rem var(--hover);
+  }
 }
 </style>
