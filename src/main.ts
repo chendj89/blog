@@ -40,10 +40,10 @@ const colourBlend = (c1: string, c2: string, ratio: number) => {
  * y 灰度
  * w 是近黑还是白色
  */
-function getColor(c2) {
-  let r = parseInt(c2.substring(1, 3), 16);
-  let g = parseInt(c2.substring(3, 5), 16);
-  let b = parseInt(c2.substring(5, 7), 16);
+function getColor(color) {
+  let r = parseInt(color.substring(1, 3), 16);
+  let g = parseInt(color.substring(3, 5), 16);
+  let b = parseInt(color.substring(5, 7), 16);
   let y = 0.2126 * r + 0.7152 * g + 0.0722 * b;
   let w = y <= 128 ? "black " : "white";
   return {
