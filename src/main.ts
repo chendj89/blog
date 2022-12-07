@@ -39,6 +39,8 @@ const colourBlend = (c1: string, c2: string, ratio: number) => {
  * b 蓝
  * y 灰度
  * w 是近黑还是白色
+ * 其他 格式：
+ * https://blog.csdn.net/weixin_38616850/article/details/107955393
  */
 function getColor(color) {
   let r = parseInt(color.substring(1, 3), 16);
